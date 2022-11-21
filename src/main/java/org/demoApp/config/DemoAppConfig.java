@@ -46,7 +46,7 @@ public class DemoAppConfig {
 
         //set the jdbc driver class
         try {
-            securityDataSource.setDriverClass(env.getProperty("jdbc.driver"));
+            securityDataSource.setDriverClass(env.getProperty("org.postgresql.Driver"));
         } catch (PropertyVetoException e) {
             throw new RuntimeException(e);
         }
@@ -58,6 +58,7 @@ public class DemoAppConfig {
         logger.info(">>> jdbc.url= " + env.getProperty("jdbc.url"));
         logger.info(">>> jdbc.user= " + env.getProperty("jdbc.user"));
         //set db connection props
+
         securityDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
         securityDataSource.setUser(env.getProperty("jdbc.user"));
         securityDataSource.setPassword(env.getProperty("jdbc.password"));
