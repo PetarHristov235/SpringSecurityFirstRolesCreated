@@ -6,8 +6,9 @@
 
 <body>
 
-<h2>Access Denied - You are not authorized to access this resource.
-Contact your System Administrator for additional information.</h2>
+<h2>Access Denied - You are not authorized to access this resource.</h2>
+<br>
+<h2>Contact your System Administrator for additional information.</h2>
 
 <hr>
 

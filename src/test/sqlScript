@@ -1,0 +1,25 @@
+create table users(
+username varchar(50) primary key,
+password varchar(50) NOT NULL,
+enabled smallint NOT NULL
+);
+insert INTO users values
+('john','{noop}test123',1),
+('mary','{noop}test123',1),
+('susan','{noop}test123',1);
+
+create table authorities
+(username varchar(50) not null,
+authority varchar(50) not null,
+constraint fk_user foreign key(username) references users(username));
+
+insert into authorities
+values
+('john','ROLE_EMPLOYEE'),
+('mary','ROLE_EMPLOYEE'),
+('mary','ROLE_MANAGER'),
+('susan','ROLE_EMPLOYEE'),
+('susan','ROLE_ADMIN');
+
+select * from authorities;
+select * from users;

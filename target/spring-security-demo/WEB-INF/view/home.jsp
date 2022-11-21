@@ -29,13 +29,19 @@
 
 <!-- Add a link to point to /leaders ... this is for the managers -->
 
-<p>
+<%--If you want to make the hyperlink visible when an user is connected with a right role--%>
+<%--paste the tag below--%>
+
+<%--<securty:authorize access="hasRole('MANAGER')">--%>
+
+    <p>
     <a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a>
     (Only for Manager peeps)
 </p>
+<%--</securty:authorize>--%>
+
 
 <!-- Add a link to point to /systems ... this is for the admins -->
-
 <p>
     <a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a>
     (Only for Admin peeps)
