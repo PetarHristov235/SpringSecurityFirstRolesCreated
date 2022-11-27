@@ -46,7 +46,7 @@ public class DemoAppConfig {
 
         //set the jdbc driver class
         try {
-            securityDataSource.setDriverClass(env.getProperty("org.postgresql.Driver"));
+            securityDataSource.setDriverClass(env.getProperty("jdbc.driver"));
         } catch (PropertyVetoException e) {
             throw new RuntimeException(e);
         }
