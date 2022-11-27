@@ -1,7 +1,6 @@
 package org.demoApp.config;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,16 +20,19 @@ import java.util.logging.Logger;
 @PropertySource("classpath:persistance-postgre.properties")
 public class DemoAppConfig {
 
-    @Autowired
-    private Environment env;
+    private final Environment env;
 
     //set up a logger via diagnostics
     Logger logger = Logger.getLogger(getClass().getName());
 
+    public DemoAppConfig(final Environment env) {
+        this.env = env;
+    }
+
     // define a bean for ViewResolver
     @Bean
     public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        final InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
         viewResolver.setPrefix("/WEB-INF/view/");
         viewResolver.setSuffix(".jsp");
         return viewResolver;
@@ -42,7 +44,7 @@ public class DemoAppConfig {
     @Bean
     public DataSource securityDatasource() {
         //create connection pool
-        ComboPooledDataSource securityDataSource = new ComboPooledDataSource();
+        final ComboPooledDataSource securityDataSource = new ComboPooledDataSource();
 
         //set the jdbc driver class
         try {
@@ -53,7 +55,6 @@ public class DemoAppConfig {
 
         //log the connection props
 
-        //for sainty's sake, log this info
         //just to make sure we are REALLY reading data from properties file
         logger.info(">>> jdbc.url= " + env.getProperty("jdbc.url"));
         logger.info(">>> jdbc.user= " + env.getProperty("jdbc.user"));
@@ -76,14 +77,12 @@ public class DemoAppConfig {
         return securityDataSource;
     }
 
-    //need a helper method
     //read environment props and convert to int
-    private int getIntProperty(String propName) {
-        String propVal = env.getProperty(propName);
+    private int getIntProperty(final String propName) {
+        final String propVal = env.getProperty(propName);
 
-        int intPropVal = Integer.parseInt(propVal);
-
-        return intPropVal;
+        assert null != propVal;
+        return Integer.parseInt(propVal);
     }
 }
 

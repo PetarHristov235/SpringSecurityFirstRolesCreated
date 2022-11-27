@@ -1,17 +1,17 @@
 <html>
 
 <head>
-    <title>luv2code LEADERS Home Page</title>
+    <title> Only for Leaders </title>
 </head>
 
 <body>
 
-<h2>luv2code LEADERS Home Page</h2>
+<h2> LEADERS Page</h2>
 
 <hr>
 
 <p>
-    See you in Brazil ... for our annual Leadership retreat!
+    See you in the Meeting
     <br>
     Keep this trip a secret, don't tell the regular employees LOL :-)
 </p>

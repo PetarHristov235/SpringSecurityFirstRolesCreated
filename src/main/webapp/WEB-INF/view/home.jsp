@@ -4,20 +4,20 @@
 <html>
 
 <head>
-    <title>luv2code Company Home Page</title>
+    <title>Thats the home page of my System Project</title>
 </head>
 
 <body>
-<h2>luv2code Company Home Page</h2>
+<h2>Creator: Petar Hristov</h2>
 <hr>
 
 <p>
-    Welcome to the luv2code company home page!
+Feel more than welcome to see it! :)
 </p>
 
 <hr>
 
-<!-- display user name and role -->
+<!-- display username and role -->
 
 <p>
     User: <security:authentication property="principal.username" />
